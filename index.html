@@ -403,11 +403,21 @@
             
             #gallery > div > div:last-child {
                 grid-template-columns: 1fr 1fr;
+                gap: 12px;
             }
             
             #gallery > div > div:last-child > div:first-child {
                 grid-column: span 2;
                 grid-row: span 1;
+            }
+            
+            #gallery img {
+                height: 150px !important;
+                object-fit: cover;
+            }
+            
+            #gallery > div > div:last-child > div:first-child img {
+                height: 200px !important;
             }
             
             #reservations > div {
