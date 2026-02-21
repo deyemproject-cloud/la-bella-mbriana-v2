@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>La Bella 'Mbriana - Trattoria Napoletana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet"/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #8B3A2A;
+            --primary-dark: #702d20;
+            --secondary: #D4C89A;
+            --bg-light: #F5F0E8;
+            --bg-dark: #4a5d4e;
+            --text-dark: #191110;
+            --text-body: #5A4A42;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Work Sans', sans-serif; background: var(--bg-light); color: var(--text-dark); }
+        
+        /* ANIMATIONS */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* NAVBAR - CLEAN DESIGN */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(245, 240, 232, 0.45);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            animation: fadeInDown 0.8s ease;
+            z-index: 1000;
+        }
+        .nav-section { display: flex; align-items: center; gap: 32px; }
+        .nav-link {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-link:hover { color: var(--primary); }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+        .nav-logo span:first-child { font-size: 1.3rem; }
+        .nav-logo span:last-child { 
+            font-size: 0.9rem; 
+            font-weight: 700;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(139,58,42,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139,58,42,0.4);
+        }
+        
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            background: linear-gradient(180deg, var(--bg-light) 0%, #ebe5d8 100%);
+        }
+        .hero-subtitle {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--primary);
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+        .hero-text {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--text-body);
+            max-width: 600px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.6s ease 0.6s both;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            animation: fadeInUp 0.6s ease 0.8s both;
+        }
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(139,58,42,0.3);
+            transition: all 0.3s;
+        }
+        .btn-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139,58,42,0.4);
+        }
+        .btn-sec {
+            background: transparent;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 16px 32px;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-sec:hover {
+            background: rgba(139,58,42,0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-section">
+            <a href="#story" class="nav-link">La Storia</a>
+            <a href="#menu" class="nav-link">Menu</a>
+        </div>
+        
+        <a href="#" class="nav-logo">
+            <span class="material-symbols-outlined">restaurant</span>
+            <span>La Bella 'Mbriana</span>
+        </a>
+        
+        <div class="nav-section">
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#reservations" class="nav-btn">Book a Table</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <span class="hero-subtitle">Benvenuti a Napoli</span>
+        <h1 class="hero-title">La Bella 'Mbriana</h1>
+        <p class="hero-text">Trattoria Napoletana. Where the spirit of the home meets the soul of the kitchen.</p>
+        <div class="hero-btns">
+            <a href="#reservations" class="btn-main">Reserve Your Table</a>
+            <a href="#menu" class="btn-sec">View Menu</a>
+        </div>
+    </header>
+
+    <!-- STORY -->
+    <section id="story" style="padding: 100px 24px; max-width: 1200px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+            <div>
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <div style="width: 40px; height: 2px; background: var(--primary);"></div>
+                    <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary);">The Spirit of the House</span>
+                </div>
+                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px; color: var(--text-dark); line-height: 1.2;">More than a legend,<br/>a way of living.</h2>
+                <p style="font-size: 1.1rem; color: var(--text-body); line-height: 1.8; margin-bottom: 20px;">
+                    In Neapolitan folklore, <strong>La Bella 'Mbriana</strong> is the benevolent spirit of the home. She is the unseen guest at every table, the warmth in the hearth, and the reason we leave a chair empty for the unexpected visitor.
+                </p>
+                <p style="font-size: 1.1rem; color: var(--text-body); line-height: 1.8;">
+                    We bring this sacred hospitality to every dish we serve. From the slow-simmered Ragu that tastes of Sunday mornings to the blistered crust of our wood-fired pizzas, we honor centuries of tradition.
+                </p>
+            </div>
+            <div style="position: relative;">
+                <div style="position: absolute; inset: -15px; border: 2px solid rgba(139,58,42,0.2); border-radius: 12px; transform: rotate(2deg);"></div>
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600" alt="Chef preparing pasta" style="width: 100%; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.2);"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" style="padding: 100px 24px; background: var(--bg-dark); color: var(--secondary);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="material-symbols-outlined" style="font-size: 3rem; margin-bottom: 16px;">restaurant_menu</span>
+                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 16px;">I Classici</h2>
+                <div style="width: 60px; height: 4px; background: var(--primary); margin: 0 auto 20px;"></div>
+                <p style="font-size: 1.1rem; opacity: 0.8; max-width: 500px; margin: 0 auto;">Timeless recipes passed down through generations.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                <div style="background: rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600" alt="Pizza" style="width: 100%; height: 200px; object-fit: cover;"/>
+                    <div style="padding: 24px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                            <h3 style="font-size: 1.2rem; font-weight: 700;">Pizza Margherita</h3>
+                            <span style="font-weight: 600;">€12</span>
+                        </div>
+                        <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">San Marzano tomato, Buffalo mozzarella, fresh basil.</p>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600" alt="Spaghetti" style="width: 100%; height: 200px; object-fit: cover;"/>
+                    <div style="padding: 24px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                            <h3 style="font-size: 1.2rem; font-weight: 700;">Spaghetti Vongole</h3>
+                            <span style="font-weight: 600;">€18</span>
+                        </div>
+                        <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">Fresh clams, garlic, parsley, hint of chili.</p>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                    <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600" alt="Meatballs" style="width: 100%; height: 200px; object-fit: cover;"/>
+                    <div style="padding: 24px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                            <h3 style="font-size: 1.2rem; font-weight: 700;">Polpette della Nonna</h3>
+                            <span style="font-weight: 600;">€14</span>
+                        </div>
+                        <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">Traditional meatballs in Sunday ragu sauce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: var(--bg-dark); color: var(--secondary); padding: 60px 24px; text-align: center;">
+        <p style="margin-bottom: 16px;">© 2025 La Bella 'Mbriana Trattoria</p>
+        <p style="font-size: 0.9rem; opacity: 0.7;">Via Toledo 156, 80134 Napoli NA, Italy</p>
+    </footer>
+</body>
+</html>
