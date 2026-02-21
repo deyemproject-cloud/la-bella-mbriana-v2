@@ -272,6 +272,32 @@
         .btn-animated-solid:hover {
             box-shadow: 0 6px 20px rgba(139,58,42,0.4);
         }
+
+        /* OUTLINE BUTTON STYLE */
+        .btn-outline {
+            background: transparent !important;
+            border: 2px solid var(--primary) !important;
+            color: var(--primary) !important;
+        }
+        
+        .btn-outline .btn-hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+            color: white !important;
+        }
+        
+        /* RIMUOVI SOTTOLINEATURA DA TUTTI I BOTTONI */
+        .btn-animated,
+        .btn-animated-solid,
+        .btn-outline {
+            text-decoration: none !important;
+        }
+        
+        .btn-animated span,
+        .btn-animated-solid span,
+        .btn-outline span {
+            text-decoration: none !important;
+        }
+
     </style>
 </head>
 <body>
@@ -302,11 +328,11 @@
         <h1 class="hero-title">La Bella 'Mbriana</h1>
         <p class="hero-text">Trattoria Napoletana. Where the spirit of the home meets the soul of the kitchen.</p>
         <div class="hero-btns">
-            <a href="#reservations" class="btn-animated">
+            <a href="#reservations" class="btn-animated btn-outline">
                 <span class="btn-text">Reserve Your Table</span>
                 <span class="btn-hover">Reserve Your Table</span>
             </a>
-            <a href="#menu" class="btn-animated" style="background: transparent;">
+            <a href="#menu" class="btn-animated btn-outline">
                 <span class="btn-text">View Menu</span>
                 <span class="btn-hover">View Menu</span>
             </a>
