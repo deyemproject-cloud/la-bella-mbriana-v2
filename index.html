@@ -323,17 +323,43 @@
                 gap: 8px;
             }
             
-            .nav-section {
-                display: flex;
-                gap: 12px;
-            }
             .nav-hide-mobile {
                 display: none;
             }
             
-            .nav-section {
-                gap: 12px;
+            /* Mobile: Logo sx, Menu centro, Book dx */
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
+            
+            .nav-left {
+                order: 2;
+            }
+            
+            .nav-logo {
+                order: 1;
+                margin-right: auto;
+            }
+            
+            .nav-logo-text {
+                display: inline !important;
+                font-size: 0.7rem;
+            }
+            
+            .nav-right {
+                order: 3;
+                margin-left: auto;
+            }
+            
+            .nav-book-btn {
+                min-width: auto !important;
+                padding: 8px 14px !important;
+                height: 36px !important;
+                font-size: 0.6rem !important;
+            }
+
 
             
             .nav-link {
