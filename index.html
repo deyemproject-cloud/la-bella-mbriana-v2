@@ -402,10 +402,11 @@
             }
             
             #gallery > div > div:last-child {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
-                gap: 12px;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                grid-template-rows: 1fr 1fr !important;
+                gap: 12px !important;
+                grid-auto-rows: auto !important;
             }
             
             #gallery > div > div:last-child > div {
