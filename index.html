@@ -313,6 +313,82 @@
             color: var(--primary) !important;
         }
 
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar {
+                width: calc(100% - 32px);
+                min-width: auto;
+                padding: 10px 20px;
+                gap: 20px;
+            }
+            
+            .nav-section {
+                display: none;
+            }
+            
+            .nav-logo span:last-child {
+                font-size: 0.75rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .btn-animated, .btn-animated.btn-reserve {
+                width: 100%;
+                min-width: 100%;
+            }
+            
+            #story > div {
+                grid-template-columns: 1fr;
+            }
+            
+            #menu > div > div:last-child {
+                grid-template-columns: 1fr;
+            }
+            
+            #gallery > div > div:last-child {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            #gallery > div > div:last-child > div:first-child {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            
+            #reservations > div {
+                padding: 32px 24px;
+            }
+            
+            form > div {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .navbar {
+                padding: 8px 16px;
+            }
+            
+            .nav-logo span:first-child {
+                font-size: 1rem;
+            }
+            
+            .nav-logo span:last-child {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
