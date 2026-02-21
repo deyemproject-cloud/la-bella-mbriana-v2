@@ -317,14 +317,27 @@
         /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
             .navbar {
-                width: calc(100% - 32px);
+                width: calc(100% - 24px);
                 min-width: auto;
-                padding: 10px 20px;
-                gap: 20px;
+                padding: 8px 12px;
+                gap: 8px;
             }
             
             .nav-section {
-                display: none;
+                display: flex;
+                gap: 8px;
+            }
+            
+            .nav-link {
+                font-size: 0.6rem;
+                padding: 6px 8px;
+            }
+            
+            .btn-animated.btn-reserve {
+                min-width: auto;
+                padding: 8px 12px;
+                height: 36px;
+                font-size: 0.6rem;
             }
             
             .nav-logo span:last-child {
