@@ -558,11 +558,27 @@
 
     <!-- HERO -->
     <header class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
+        <video id="hero-bg-video" class="hero-video" autoplay loop muted playsinline>
             <source src="https://videos.pexels.com/video-files/3195394/3195394-uhd_3840_2160_25fps.mp4"
                 type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var v = document.getElementById('hero-bg-video');
+                if (v) {
+                    v.muted = true;
+                    var playPromise = v.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(function (error) {
+                            console.log("Autoplay blocked. Add user interaction listener.");
+                            document.body.addEventListener('click', function () { v.play(); }, { once: true });
+                            document.body.addEventListener('touchstart', function () { v.play(); }, { once: true });
+                        });
+                    }
+                }
+            });
+        </script>
         <span class="hero-subtitle">Benvenuti a Napoli</span>
         <h1 class="hero-title">La Bella 'Mbriana</h1>
         <p class="hero-text">Trattoria Napoletana. Dove lo spirito della casa incontra l'anima della cucina.</p>
