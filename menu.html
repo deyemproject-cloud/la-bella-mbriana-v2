@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="light" lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Menu — La Bella 'Mbriana Trattoria Napoletana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="animations.css" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error": "#ffffff", "surface-container-highest": "#e5e2e1", "on-background": "#1c1b1b",
+            "inverse-primary": "#e8b8a8", "tertiary": "#4a5d4e", "on-primary-container": "#fff2f0",
+            "surface-tint": "#8B3A2A", "outline-variant": "#e4beba", "error-container": "#ffdad6",
+            "inverse-surface": "#313030", "surface-container-high": "#eae7e7",
+            "on-secondary-container": "#636262", "secondary-fixed": "#e5e2e1", "error": "#ba1a1a",
+            "surface-bright": "#fcf9f8", "tertiary-fixed": "#d7e5da", "primary-fixed": "#ffdad6",
+            "on-secondary-fixed-variant": "#474746", "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#2e3f32", "on-tertiary-container": "#d7e5da",
+            "surface-container-low": "#f6f3f2", "on-secondary-fixed": "#1c1b1b",
+            "on-primary-fixed": "#410003", "primary": "#8B3A2A", "secondary": "#5f5e5e",
+            "inverse-on-surface": "#f3f0ef", "on-primary-fixed-variant": "#702d20",
+            "on-primary": "#ffffff", "primary-fixed-dim": "#e8b8a8", "on-secondary": "#ffffff",
+            "on-surface": "#1c1b1b", "on-surface-variant": "#5b403d", "surface-dim": "#dcd9d9",
+            "secondary-fixed-dim": "#c8c6c5", "outline": "#8f6f6c", "tertiary-container": "#4a5d4e",
+            "secondary-container": "#e2dfde", "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a", "on-tertiary-fixed": "#1f2e22", "background": "#F5F0E8",
+            "surface-container": "#efe9dd", "tertiary-fixed-dim": "#a8c5b0", "surface": "#F5F0E8",
+            "surface-variant": "#e5e2e1", "primary-container": "#D4C89A"
+          },
+          fontFamily: { "headline": ["Newsreader"], "body": ["Manrope"], "label": ["Manrope"] },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    body { background-color: #F5F0E8; color: #1c1b1b; font-family: 'Manrope', sans-serif; }
+    .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+    .serif-bold { font-family: 'Newsreader', serif; font-weight: 700; }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+    .tab-content { display: none; opacity: 0; }
+    .tab-content.active { display: block; opacity: 1; }
+    .tab-btn.active { color: #8B3A2A; border-bottom-color: #8B3A2A; }
+    .tab-bar { scroll-behavior: smooth; }
+    .tab-bar::-webkit-scrollbar { display: none; }
+    .tab-bar { -ms-overflow-style: none; scrollbar-width: none; }
+    .subtab { color: #5b403d; }
+    .allergens { font-family: 'Manrope', sans-serif; font-size: 0.7rem; letter-spacing: 0.05em; color: rgba(28,27,27,0.35); }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav class="anim-navbar fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+    <a href="index.html" class="flex flex-col leading-none no-underline">
+      <div class="font-['Newsreader'] italic font-bold text-2xl tracking-tighter text-[#8B3A2A]">La Bella 'Mbriana</div>
+      <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/60">Trattoria Napoletana</div>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#8B3A2A] transition-all duration-300 ease-in-out" href="index.html">Home</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#8B3A2A] transition-all duration-300 ease-in-out" href="index.html#story">La Storia</a>
+      <a class="text-[#8B3A2A] font-semibold font-['Manrope'] font-medium text-sm uppercase tracking-widest transition-all duration-300 ease-in-out" href="menu.html">Menu</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#8B3A2A] transition-all duration-300 ease-in-out" href="index.html#gallery">Gallery</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#8B3A2A] transition-all duration-300 ease-in-out" href="index.html#reservations">Contatti</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-2">
+        <a class="text-[#1c1b1b] hover:text-[#8B3A2A] transition-colors" href="https://wa.me/393665467484" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+      </div>
+      <a href="index.html#reservations" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide btn-lift no-underline">Prenota ora</a>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-[#1c1b1b]">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl flex-col items-center justify-center gap-8 pt-24">
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="absolute top-6 right-6 text-[#1c1b1b]"><span class="material-symbols-outlined text-3xl">close</span></button>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="index.html">Home</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="index.html#story">La Storia</a>
+    <a class="text-[#8B3A2A] font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="menu.html">Menu</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="index.html#gallery">Gallery</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="index.html#reservations">Contatti</a>
+    <a href="index.html#reservations" class="bg-primary text-on-primary px-8 py-3 rounded-full font-label font-bold text-sm tracking-wide no-underline mt-4">Prenota ora</a>
+  </div>
+
+  <main class="pt-28 pb-16">
+    <!-- Header -->
+    <div class="text-center px-6 mb-8">
+      <h1 class="anim-hero-line-1 text-5xl md:text-7xl serif-bold tracking-tighter mb-4">Il Nostro <span class="serif-italic text-primary">Menu</span></h1>
+      <p class="anim-hero-line-2 text-on-surface/60 font-body text-lg max-w-xl mx-auto">Sapori autentici della tradizione napoletana, dal mare alla terra, dalla pizza ai dolci.</p>
+      <p class="anim-hero-line-3 text-on-surface/40 font-body text-xs max-w-xl mx-auto mt-3 uppercase tracking-widest">Coperto 2€ · Servizio torta 2€ a commensale · Non si effettuano conti separati nel fine settimana</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="sticky top-[72px] z-40 bg-surface/80 backdrop-blur-xl border-b border-on-surface/5">
+      <div class="container mx-auto px-6 flex overflow-x-auto gap-0 no-scrollbar tab-bar">
+        <button onclick="switchTab('antipasti')" class="tab-btn active flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-all whitespace-nowrap" data-tab="antipasti">
+          <span class="material-symbols-outlined text-base align-middle mr-1">restaurant_menu</span> Antipasti
+        </button>
+        <button onclick="switchTab('primi-secondi')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-all whitespace-nowrap" data-tab="primi-secondi">
+          <span class="material-symbols-outlined text-base align-middle mr-1">restaurant</span> Primi &amp; Secondi
+        </button>
+        <button onclick="switchTab('pizze')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-all whitespace-nowrap" data-tab="pizze">
+          <span class="material-symbols-outlined text-base align-middle mr-1">local_pizza</span> Pizze &amp; Calzoni
+        </button>
+        <button onclick="switchTab('bevande')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-all whitespace-nowrap" data-tab="bevande">
+          <span class="material-symbols-outlined text-base align-middle mr-1">wine_bar</span> Dolci &amp; Bevande
+        </button>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-6 mt-12 max-w-4xl">
+
+      <!-- ==================== ANTIPASTI ==================== -->
+      <div id="antipasti" class="tab-content active">
+
+        <!-- Antipasti di Mare -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Antipasti di Mare</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Impepata di Cozze</span><br><span class="allergens">Allergeni: 1, 2, 3, 4, 14</span></div><span class="font-label font-bold text-primary">€18</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tocchetti di Baccalà e Scarola</span><br><span class="allergens">Allergeni: 1, 2, 4, 5, 14</span></div><span class="font-label font-bold text-primary">€10</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Insalata di Mare</span><br><span class="text-on-surface/50 text-sm">Polpo, cozze, vongole, mazzancolle, olive</span><br><span class="allergens">Allergeni: 1, 2, 3, 4, 14</span></div><span class="font-label font-bold text-primary">€16</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Gamberi Pastellati</span><br><span class="text-on-surface/50 text-sm">Gamberi pastellati con crema di bufala e pistacchi</span><br><span class="allergens">Allergeni: 1, 2, 4, 5, 7, 8, 14</span></div><span class="font-label font-bold text-primary">€10</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tris di Bruschette di Mare</span><br><span class="text-on-surface/50 text-sm">Tartare di gambero con maionese al lime · Crema di bufala e alici · Polpo con maionese di polpo</span><br><span class="allergens">Allergeni: 1, 2, 4, 7, 10, 14</span></div><span class="font-label font-bold text-primary">€12</span></div>
+          </div>
+        </div>
+
+        <!-- Antipasti di Terra -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Antipasti di Terra</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tagliere Misto Formaggi e Salumi</span><br><span class="text-on-surface/50 text-sm">Con bufala 100g e zeppoline · per 2 persone</span><br><span class="allergens">Allergeni: 1, 7</span></div><span class="font-label font-bold text-primary">€25</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Bruschette Classiche</span><br><span class="text-on-surface/50 text-sm">Pomodoro, basilico, olio, aglio (3 pz)</span><br><span class="allergens">Allergeni: 1, 4</span></div><span class="font-label font-bold text-primary">€4</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tiella</span><br><span class="text-on-surface/50 text-sm">Crocchè, montanarina, zeppoline</span><br><span class="allergens">Allergeni: 1, 2, 3, 4, 7, 10</span></div><span class="font-label font-bold text-primary">€8</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Bufala e Crudo</span><br><span class="allergens">Allergeni: 7</span></div><span class="font-label font-bold text-primary">€10</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tris di Montanarine Gourmet</span><br><span class="text-on-surface/50 text-sm">Alla Nerano · Alla Siciliana · Con friarielli e crema di bufala</span><br><span class="allergens">Allergeni: 1, 7</span></div><span class="font-label font-bold text-primary">€9</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Zeppoline <span class="text-on-surface/50 text-sm font-normal">(6 pz)</span></span><span class="font-label font-bold text-primary">€2</span></div>
+          </div>
+        </div>
+
+        <!-- Contorni -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Contorni</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Chips Cacio e Pepe</h3><span class="font-label font-bold text-primary">€5</span></div><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Friarielli</h3><span class="font-label font-bold text-primary">€5</span></div></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Verdure Grigliate</h3><span class="font-label font-bold text-primary">€5</span></div><p class="text-on-surface/60 text-sm">Zucchine, melanzane.</p></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Patatine Fritte</h3><span class="font-label font-bold text-primary">€4</span></div><span class="allergens">Allergeni: 1</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Verdure Pastellate</h3><span class="font-label font-bold text-primary">€5,50</span></div><p class="text-on-surface/60 text-sm">Zucchine, melanzane.</p><span class="allergens">Allergeni: 1</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Insalata</h3><span class="font-label font-bold text-primary">€5</span></div></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Scarola Napoletana</h3><span class="font-label font-bold text-primary">€5</span></div><span class="allergens">Allergeni: 2, 4, 12</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PRIMI & SECONDI ==================== -->
+      <div id="primi-secondi" class="tab-content">
+
+        <!-- Primi di Mare -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Primi di Mare</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Spaghetti Lupino e Vongola</span><br><span class="allergens">Allergeni: 1, 2, 3, 4, 9, 14</span></div><span class="font-label font-bold text-primary">€15</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Paccheri con Tonno ai Due Pomodorini</span><br><span class="allergens">Allergeni: 1, 2, 4, 14</span></div><span class="font-label font-bold text-primary">€18</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Scialatielli alla Napoletana</span><br><span class="text-on-surface/50 text-sm">Cozze, lupino, vongola, gamberi, mazzancolle, pomodorini</span><br><span class="allergens">Allergeni: 1, 2, 4, 14</span></div><span class="font-label font-bold text-primary">€20</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Sole e Mare</span><br><span class="text-on-surface/50 text-sm">Linguine al pomodorino rosso e giallo con tartare di gambero rosso e crema di bufala</span><br><span class="allergens">Allergeni: 1, 2, 4, 7, 13, 14</span></div><span class="font-label font-bold text-primary">€17</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Linguine al Sugo di Polpo</span><br><span class="text-on-surface/50 text-sm">Sugo di polpo, olive, pomodoro, prezzemolo</span><br><span class="allergens">Allergeni: 1, 2, 4, 7, 13</span></div><span class="font-label font-bold text-primary">€17</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Paccheri al Baccalà Mantecato</span><br><span class="text-on-surface/50 text-sm">Baccalà mantecato, pomodorini gialli e rossi, olive, capperi</span><br><span class="allergens">Allergeni: 1, 2, 4, 7, 13, 14</span></div><span class="font-label font-bold text-primary">€18</span></div>
+          </div>
+        </div>
+
+        <!-- Primi di Terra -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Primi di Terra</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Pasta Patate e Provola</span><br><span class="allergens">Allergeni: 1, 7</span></div><span class="font-label font-bold text-primary">€13</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Spaghetti alla Nerano</span><br><span class="text-on-surface/50 text-sm">Zucchine, basilico, olio, provolone</span><br><span class="allergens">Allergeni: 1, 7</span></div><span class="font-label font-bold text-primary">€13</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Paccheri allo Scarpariello</span><br><span class="text-on-surface/50 text-sm">Pomodoro fresco, parmigiano reggiano, basilico</span><br><span class="allergens">Allergeni: 1, 3, 7, 9, 10</span></div><span class="font-label font-bold text-primary">€12</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Scialatielli alla Partenopea</span><br><span class="text-on-surface/50 text-sm">Salsiccia, cialda di grana, friarielli</span><br><span class="allergens">Allergeni: 1, 3, 7</span></div><span class="font-label font-bold text-primary">€13</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Gnocchi con Salsiccia e Funghi</span><br><span class="allergens">Allergeni: 1</span></div><span class="font-label font-bold text-primary">€14</span></div>
+          </div>
+        </div>
+
+        <!-- Secondi di Mare -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Secondi di Mare</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Polpo e Patate 2.0</span><br><span class="text-on-surface/50 text-sm">Tentacoli di polpo, purea di patate, crostini aromatizzati</span><br><span class="allergens">Allergeni: 1, 2, 4, 7, 13, 14</span></div><span class="font-label font-bold text-primary">€17</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Grigliata di Mare</span><br><span class="text-on-surface/50 text-sm">Tonno, 3 gamberoni, polpo</span><br><span class="allergens">Allergeni: 1, 2, 4, 7, 13, 14</span></div><span class="font-label font-bold text-primary">€30</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Gamberoni alla Piastra con Scarola</span><br><span class="text-on-surface/50 text-sm">5 gamberoni, scarola</span><br><span class="allergens">Allergeni: 1, 2, 4, 6, 12</span></div><span class="font-label font-bold text-primary">€16</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Cotoletta di Tonno</span><br><span class="text-on-surface/50 text-sm">In agrodolce con maionese di lime</span><br><span class="allergens">Allergeni: 1, 2, 4, 5, 14</span></div><span class="font-label font-bold text-primary">€19</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Baccalà in Tempura</span><br><span class="text-on-surface/50 text-sm">Su crema di ceci e alici</span><br><span class="allergens">Allergeni: 1, 2, 3, 4, 12, 14</span></div><span class="font-label font-bold text-primary">€18</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Fritto Misto</span><br><span class="text-on-surface/50 text-sm">Gambero, mazzancolle, calamaro, baccalà, verdure pastellate</span><br><span class="allergens">Allergeni: 1, 2, 4, 5, 8, 14</span></div><span class="font-label font-bold text-primary">€18</span></div>
+          </div>
+        </div>
+
+        <!-- Secondi di Terra -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Secondi di Terra</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tagliata</span><br><span class="text-on-surface/50 text-sm">Rucola, grana, pomodorini</span><br><span class="allergens">Allergeni: 7</span></div><span class="font-label font-bold text-primary">€18</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Salsiccia Napoletana e Friarielli</span><span class="font-label font-bold text-primary">€12</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tagliata Porcini e Zola</span><br><span class="allergens">Allergeni: 7</span></div><span class="font-label font-bold text-primary">€19</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PIZZE ==================== -->
+      <div id="pizze" class="tab-content">
+
+        <!-- Pizze Classiche -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Pizze Classiche</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Margherita</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/60 text-sm">Pomodoro S. Marzano, fior di latte, grana, olio evo.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Pizza Bianca</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/60 text-sm">Fior di latte, grana, olio evo.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Marinara</h3><span class="font-label font-bold text-primary">€6</span></div><p class="text-on-surface/60 text-sm">Pomodoro S. Marzano, aglio, origano selvatico.</p><span class="allergens">Allergeni: 1</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Napoli</h3><span class="font-label font-bold text-primary">€10</span></div><p class="text-on-surface/60 text-sm">Pomodoro S. Marzano, acciughe, capperi, olive.</p><span class="allergens">Allergeni: 1, 2, 3, 4, 11, 14</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Miracolo di S. Gennaro</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Pomodoro S. Marzano a filetto, bufala, parmigiano reggiano, basilico, olio evo.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">4 Stagioni</h3><span class="font-label font-bold text-primary">€12</span></div><p class="text-on-surface/60 text-sm">Pomodoro S. Marzano, fior di latte, salame, funghi, carciofi, prosciutto cotto.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Capricciosa</h3><span class="font-label font-bold text-primary">€12</span></div><p class="text-on-surface/60 text-sm">Carciofi, fior di latte, olive, prosciutto cotto, pomodori, funghi.</p><span class="allergens">Allergeni: 1, 7</span></div>
+          </div>
+        </div>
+
+        <!-- Pizze di Mare -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Pizze di Mare</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Costiera</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Polpo, patate, zeste di limone.</p><span class="allergens">Allergeni: 1, 2, 3, 4, 7, 8, 11, 14</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Crudaiola</h3><span class="font-label font-bold text-primary">€15</span></div><p class="text-on-surface/60 text-sm">Mozzarella di bufala a crudo, filetti di pomodoro dry di S. Marzano, filetti di tonno pinne gialle, alici, fior di cappero, basilico fritto.</p><span class="allergens">Allergeni: 1, 2, 3, 4, 7, 8, 11, 14</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">La Sauté</h3><span class="font-label font-bold text-primary">€15</span></div><p class="text-on-surface/60 text-sm">Pacchetelle gialle del Vesuvio, mozzarella di bufala, sauté di frutti di mare, crumble di pane aromatizzato.</p><span class="allergens">Allergeni: 1, 2, 3, 4, 7, 8, 11, 14</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Marechiaro</h3><span class="font-label font-bold text-primary">€15</span></div><p class="text-on-surface/60 text-sm">Turbante di friarielli croccanti, stracciatella di bufala, polipo croccante, zeste di limoni, fior di latte.</p><span class="allergens">Allergeni: 1, 2, 3, 4, 11, 14</span></div>
+          </div>
+        </div>
+
+        <!-- Pizze di Terra -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Pizze di Terra</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Ortolana</h3><span class="font-label font-bold text-primary">€12</span></div><p class="text-on-surface/60 text-sm">Fior di latte, pomodoro S. Marzano, zucchine, melanzane, cipolle caramellate.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Diavolosa</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Pomodoro S. Marzano, fior di latte, olio di peperoncino jalapeño, salame piccante.</p><span class="allergens">Allergeni: 1, 7, 11</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">4 Formaggi</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Gorgonzola, mozzarella, ricotta, grana padano, basilico.</p><span class="allergens">Allergeni: 1, 7, 11</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Pistacchiosa</h3><span class="font-label font-bold text-primary">€14</span></div><p class="text-on-surface/60 text-sm">Mozzarella, crema di pistacchi, mortadella, stracciatella, granella di pistacchi, grana.</p><span class="allergens">Allergeni: 1, 5, 7, 8</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Casa Varlese</h3><span class="font-label font-bold text-primary">€15</span></div><p class="text-on-surface/60 text-sm">Cornicione ripieno di ricotta, pomodoro S. Marzano, pancetta di maialino nero casertano, basilico, parmigiano reggiano.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Carrettiera</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Salsiccia, friarielli, fior di latte, grana.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Maradona</h3><span class="font-label font-bold text-primary">€12</span></div><p class="text-on-surface/60 text-sm">Pancetta croccante, parmigiano reggiano, olio evo aromatizzato all'aglio, peperoncino, basilico fritto.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Miracolo Partenopeo</h3><span class="font-label font-bold text-primary">€11</span></div><p class="text-on-surface/60 text-sm">Pomodorino giallo ciliegino, pomodoro rosso ciliegino, fior di latte, basilico fritto, grana.</p><span class="allergens">Allergeni: 1, 7</span></div>
+          </div>
+        </div>
+
+        <!-- Pizze Speciali -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Pizze Speciali</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">La Parmigiana</h3><span class="font-label font-bold text-primary">€12</span></div><p class="text-on-surface/60 text-sm">Pomodoro, mozzarella, grana, basilico, chips di melanzane.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Scapece</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Pancetta, mozzarella, parmigiano, menta, chips di zucchine.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Fiocco</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Crema di mozzarella, prosciutto cotto, mozzarella, grana, pepe, purea di patate.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Gustami</h3><span class="font-label font-bold text-primary">€14</span></div><p class="text-on-surface/60 text-sm">Fior di latte, confettura di fichi, prosciutto crudo, crema di gorgonzola.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">La Croccante</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Cornicione ripieno di ricotta, pancetta, funghi, pepe, grana, crocchè di patate, chips di grana.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Pistacchio Gourmet</h3><span class="font-label font-bold text-primary">€14</span></div><p class="text-on-surface/60 text-sm">Grana, mozzarella, pancetta, crema di pistacchio, ricotta, granella di pistacchio.</p><span class="allergens">Allergeni: 1, 5, 7, 8</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">La Tronchetto</h3><span class="font-label font-bold text-primary">€14</span></div><p class="text-on-surface/60 text-sm">Fior di latte, pomodoro S. Marzano, scaglie di parmigiano reggiano, rucola, prosciutto crudo.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Nerano</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Grana, mozzarella, crema di zucchine, basilico, chips di zucchine, chips di grana, provolone grattugiato.</p><span class="allergens">Allergeni: 1, 5, 7, 8</span></div>
+          </div>
+        </div>
+
+        <!-- Calzoni -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Calzoni</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Ripieno Classico</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Ricotta, salame Napoli, pomodoro S. Marzano, mozzarella di bufala, grana, pepe.</p><span class="allergens">Allergeni: 1, 7, 11</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Ripieno Scarola</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Scarola saltata con olive, capperi, alici, fior di latte, grana.</p><span class="allergens">Allergeni: 1, 4, 7, 11, 14</span></div>
+          </div>
+        </div>
+
+        <!-- Pizze Fritte -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Pizze Fritte</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Montanara con Salsiccia e Friarielli</h3><span class="font-label font-bold text-primary">€12</span></div><p class="text-on-surface/60 text-sm">Ripassata al forno.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Montanara con Friarielli &amp; Polipo</h3><span class="font-label font-bold text-primary">€14</span></div><p class="text-on-surface/60 text-sm">Ripassata al forno con friarielli, stracciatella, polipo arrosto.</p><span class="allergens">Allergeni: 1, 4, 7, 11, 14</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Montanara Classica</h3><span class="font-label font-bold text-primary">€11</span></div><p class="text-on-surface/60 text-sm">Ripassata al forno con pomodoro, parmigiano, mozzarella, basilico.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Pizza Fritta Cotto</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Mozzarella, prosciutto cotto.</p><span class="allergens">Allergeni: 1, 7</span></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Pizza Fritta Ripiena</h3><span class="font-label font-bold text-primary">€13</span></div><p class="text-on-surface/60 text-sm">Salame, pomodoro, mozzarella, ricotta.</p><span class="allergens">Allergeni: 1, 7</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== DOLCI & BEVANDE ==================== -->
+      <div id="bevande" class="tab-content">
+
+        <!-- Dolci -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Dolci della Casa</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="bg-surface-container-low rounded-xl p-8 text-center">
+            <p class="serif-italic text-xl text-on-surface/70">Chiedi al nostro personale la selezione del giorno.</p>
+          </div>
+        </div>
+
+        <!-- Vini Rossi -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Vini Rossi</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-5">
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Vigna Piano d'Angelo</h3><span class="font-label font-bold text-primary">€30</span></div><p class="text-on-surface/50 text-sm serif-italic">Taurasi</p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Sangiovese</h3><span class="font-label font-bold text-primary">€18</span></div></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Irpinia Campi Sella</h3><span class="font-label font-bold text-primary">€30</span></div><p class="text-on-surface/50 text-sm serif-italic">Taurasini</p></div>
+          </div>
+        </div>
+
+        <!-- Vini Bianchi -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Vini Bianchi</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-5">
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Vigna del Lauro</h3><span class="font-label font-bold text-primary">€25</span></div><p class="text-on-surface/50 text-sm serif-italic">Traminer Aromatico</p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Falanghina</h3><span class="font-label font-bold text-primary">€25</span></div></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Greco</h3><span class="font-label font-bold text-primary">€30</span></div><p class="text-on-surface/50 text-sm serif-italic">San Salvatore</p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Serranella Pecorino</h3><span class="font-label font-bold text-primary">€28</span></div><p class="text-on-surface/50 text-sm serif-italic">Terre di Chieti</p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Serranella Passerina</h3><span class="font-label font-bold text-primary">€28</span></div><p class="text-on-surface/50 text-sm serif-italic">Terre di Chieti</p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Kreuzberg</h3><span class="font-label font-bold text-primary">€30</span></div><p class="text-on-surface/50 text-sm serif-italic">Wachau</p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Bessererhof Omar Mair</h3><span class="font-label font-bold text-primary">€38</span></div></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Vermentino</h3><span class="font-label font-bold text-primary">€25</span></div><p class="text-on-surface/50 text-sm serif-italic">Tenuta Montauto</p></div>
+          </div>
+        </div>
+
+        <!-- Rosati & Spumanti -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Rosati &amp; Spumanti</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-5">
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Ribolla Gialla Brut</h3><span class="font-label font-bold text-primary">€20</span></div></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Merotto</h3><span class="font-label font-bold text-primary">€25</span></div></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Primitivo</h3><span class="font-label font-bold text-primary">€25</span></div></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Tenuta del Garda</h3><span class="font-label font-bold text-primary">€25</span></div></div>
+          </div>
+        </div>
+
+        <!-- Birre -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Birre</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Plis</span><span class="text-on-surface/50 text-sm ml-2">media</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Plis</span><span class="text-on-surface/50 text-sm ml-2">piccola</span></div><span class="font-label font-bold text-primary">€3</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Weiss</span><span class="text-on-surface/50 text-sm ml-2">media</span></div><span class="font-label font-bold text-primary">€6</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Weiss</span><span class="text-on-surface/50 text-sm ml-2">piccola</span></div><span class="font-label font-bold text-primary">€4</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">St. Thomas</span><span class="text-on-surface/50 text-sm ml-2">media</span></div><span class="font-label font-bold text-primary">€6</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">St. Thomas</span><span class="text-on-surface/50 text-sm ml-2">piccola</span></div><span class="font-label font-bold text-primary">€4</span></div>
+          </div>
+        </div>
+
+        <!-- Drink -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Drink</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Gin Tonic</span><span class="font-label font-bold text-primary">€6</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Gin Lemon</span><span class="font-label font-bold text-primary">€6</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Gin Premium</span><span class="font-label font-bold text-primary">€8</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Vodka Tonic</span><span class="font-label font-bold text-primary">€8</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Vodka Premium</span><span class="font-label font-bold text-primary">€8</span></div>
+          </div>
+        </div>
+
+        <!-- Alcolici -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Alcolici</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Grappa</span><span class="font-label font-bold text-primary">€4</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Amaro</span><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Distillati</span><span class="font-label font-bold text-primary">€6</span></div>
+          </div>
+        </div>
+
+        <!-- Bevande -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Bevande</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Coca Cola</span><span class="font-label font-bold text-primary">€3,50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Sprite</span><span class="font-label font-bold text-primary">€3,50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Lemonsoda</span><span class="font-label font-bold text-primary">€3,50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Tonic Water</span><span class="font-label font-bold text-primary">€3,50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Caffè</span><span class="font-label font-bold text-primary">€1,50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Acqua</span><span class="font-label font-bold text-primary">€2,50</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Allergens Legend -->
+      <div class="mt-20 bg-surface-container-low rounded-xl p-8" data-animate="fade-up">
+        <h3 class="serif-bold text-xl mb-2">Allergeni — Regolamento CE 1169/2011</h3>
+        <p class="text-on-surface/60 text-sm mb-6">Per allergie o intolleranze alimentari informare preventivamente il nostro personale. Tutti i piatti potrebbero presentare tracce di sesamo o soia e contenere glutammato di sodio. I vini e le bevande possono contenere solfiti.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-2 text-sm text-on-surface/70">
+          <div><span class="text-primary font-bold">1</span> Glutine</div>
+          <div><span class="text-primary font-bold">2</span> Crostacei</div>
+          <div><span class="text-primary font-bold">3</span> Uova</div>
+          <div><span class="text-primary font-bold">4</span> Pesce</div>
+          <div><span class="text-primary font-bold">5</span> Arachidi</div>
+          <div><span class="text-primary font-bold">6</span> Soia</div>
+          <div><span class="text-primary font-bold">7</span> Latte</div>
+          <div><span class="text-primary font-bold">8</span> Frutta a guscio</div>
+          <div><span class="text-primary font-bold">9</span> Sedano</div>
+          <div><span class="text-primary font-bold">10</span> Senape</div>
+          <div><span class="text-primary font-bold">11</span> Anidride solforosa</div>
+          <div><span class="text-primary font-bold">12</span> Sesamo</div>
+          <div><span class="text-primary font-bold">13</span> Lupini</div>
+          <div><span class="text-primary font-bold">14</span> Molluschi</div>
+        </div>
+        <p class="text-on-surface/40 text-xs mt-6 italic">* I prodotti contrassegnati possono essere surgelati all'origine o surgelati in loco con abbattitore di temperatura.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#F5F0E8] rounded-t-[3rem] mt-20 w-full px-12 py-16 border-t border-on-surface/5">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center md:items-start gap-1">
+        <a href="index.html" class="no-underline"><div class="font-['Newsreader'] italic text-2xl font-bold text-[#8B3A2A]">La Bella 'Mbriana</div></a>
+        <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/40">Trattoria Napoletana</div>
+        <div class="flex gap-4 mt-3">
+          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors" href="https://wa.me/393665467484" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex gap-6 text-sm">
+          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors font-['Manrope'] tracking-wide" href="index.html#story">La Storia</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors font-['Manrope'] tracking-wide" href="menu.html">Menu</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors font-['Manrope'] tracking-wide" href="index.html#gallery">Gallery</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors font-['Manrope'] tracking-wide" href="index.html#reservations">Contatti</a>
+        </div>
+        <div class="text-[#1c1b1b]/40 font-['Manrope'] text-sm tracking-wide text-center mt-2">© 2025 La Bella 'Mbriana. Tutti i diritti riservati.</div>
+      </div>
+      <div class="flex flex-col items-center md:items-end gap-1 text-sm text-[#1c1b1b]/40">
+        <span>Via Toledo 156</span><span>80134 Napoli (NA)</span>
+        <a class="hover:text-[#8B3A2A] transition-colors" href="https://wa.me/393665467484">+39 366 546 7484</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="animations.js" defer></script>
+
+</body>
+</html>
