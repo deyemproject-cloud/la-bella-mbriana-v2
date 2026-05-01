@@ -10,8 +10,8 @@
   --anim-easing: cubic-bezier(0.16, 1, 0.3, 1);
   --anim-distance: 40px;
   --anim-stagger: 0.12s;
-  --primary: #8B3A2A;
-  --primary-glow: rgba(139, 58, 42, 0.15);
+  --primary: #A04830;
+  --primary-glow: rgba(160, 72, 48, 0.15);
 }
 
 /* --- Smooth Scroll --- */
@@ -126,11 +126,11 @@ html {
 }
 .btn-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(139, 58, 42, 0.3);
+  box-shadow: 0 8px 25px rgba(160, 72, 48, 0.3);
 }
 .btn-lift:active {
   transform: translateY(0) scale(0.97);
-  box-shadow: 0 2px 8px rgba(139, 58, 42, 0.2);
+  box-shadow: 0 2px 8px rgba(160, 72, 48, 0.2);
 }
 
 /* Card lift + glow */
@@ -199,7 +199,7 @@ html {
     90deg,
     #1c1b1b 0%,
     #1c1b1b 40%,
-    #8B3A2A 50%,
+    #A04830 50%,
     #1c1b1b 60%,
     #1c1b1b 100%
   );
@@ -265,7 +265,7 @@ body::after {
   transition: color 0.3s ease, border-bottom-color 0.3s ease, background-color 0.3s ease;
 }
 .tab-btn:hover:not(.active) {
-  background-color: rgba(139, 58, 42, 0.05);
+  background-color: rgba(160, 72, 48, 0.05);
 }
 
 /* ============================================

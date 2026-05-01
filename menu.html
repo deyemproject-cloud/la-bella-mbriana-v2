@@ -17,23 +17,23 @@
         extend: {
           colors: {
             "on-error": "#ffffff", "surface-container-highest": "#e5e2e1", "on-background": "#1c1b1b",
-            "inverse-primary": "#e8b8a8", "tertiary": "#4a5d4e", "on-primary-container": "#fff2f0",
-            "surface-tint": "#8B3A2A", "outline-variant": "#e4beba", "error-container": "#ffdad6",
+            "inverse-primary": "#e8b8a8", "tertiary": "#7E8862", "on-primary-container": "#fff2f0",
+            "surface-tint": "#A04830", "outline-variant": "#e4beba", "error-container": "#ffdad6",
             "inverse-surface": "#313030", "surface-container-high": "#eae7e7",
             "on-secondary-container": "#636262", "secondary-fixed": "#e5e2e1", "error": "#ba1a1a",
             "surface-bright": "#fcf9f8", "tertiary-fixed": "#d7e5da", "primary-fixed": "#ffdad6",
             "on-secondary-fixed-variant": "#474746", "on-tertiary": "#ffffff",
             "on-tertiary-fixed-variant": "#2e3f32", "on-tertiary-container": "#d7e5da",
             "surface-container-low": "#f6f3f2", "on-secondary-fixed": "#1c1b1b",
-            "on-primary-fixed": "#410003", "primary": "#8B3A2A", "secondary": "#5f5e5e",
-            "inverse-on-surface": "#f3f0ef", "on-primary-fixed-variant": "#702d20",
+            "on-primary-fixed": "#410003", "primary": "#A04830", "secondary": "#5f5e5e",
+            "inverse-on-surface": "#f3f0ef", "on-primary-fixed-variant": "#823A26",
             "on-primary": "#ffffff", "primary-fixed-dim": "#e8b8a8", "on-secondary": "#ffffff",
             "on-surface": "#1c1b1b", "on-surface-variant": "#5b403d", "surface-dim": "#dcd9d9",
-            "secondary-fixed-dim": "#c8c6c5", "outline": "#8f6f6c", "tertiary-container": "#4a5d4e",
+            "secondary-fixed-dim": "#c8c6c5", "outline": "#8f6f6c", "tertiary-container": "#7E8862",
             "secondary-container": "#e2dfde", "surface-container-lowest": "#ffffff",
             "on-error-container": "#93000a", "on-tertiary-fixed": "#1f2e22", "background": "#F5F0E8",
             "surface-container": "#efe9dd", "tertiary-fixed-dim": "#a8c5b0", "surface": "#F5F0E8",
-            "surface-variant": "#e5e2e1", "primary-container": "#D4C89A"
+            "surface-variant": "#e5e2e1", "primary-container": "#D4BC85"
           },
           fontFamily: { "headline": ["Newsreader"], "body": ["Manrope"], "label": ["Manrope"] },
           borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
@@ -43,11 +43,11 @@
   </script>
   <style>
     :root {
-      --primary: #8B3A2A;
-      --primary-dark: #702d20;
-      --secondary: #D4C89A;
+      --primary: #A04830;
+      --primary-dark: #823A26;
+      --secondary: #D4BC85;
       --bg-light: #F5F0E8;
-      --bg-dark: #4a5d4e;
+      --bg-dark: #7E8862;
       --text-dark: #191110;
       --text-body: #5A4A42;
     }
@@ -57,7 +57,7 @@
     .serif-bold { font-family: 'Newsreader', serif; font-weight: 700; }
     .tab-content { display: none; opacity: 0; }
     .tab-content.active { display: block; opacity: 1; }
-    .tab-btn.active { color: #8B3A2A; border-bottom-color: #8B3A2A; }
+    .tab-btn.active { color: #A04830; border-bottom-color: #A04830; }
     .tab-bar { scroll-behavior: smooth; }
     .tab-bar::-webkit-scrollbar { display: none; }
     .tab-bar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -185,10 +185,10 @@
     <div class="nav-section nav-right">
       <a href="index.html#gallery" class="nav-link nav-hide-mobile">Gallery</a>
       <a href="index.html#reservations" class="btn-animated btn-reserve nav-book-btn"
-         style="background: linear-gradient(135deg, #8B3A2A, #702d20); border: 2px solid #8B3A2A;">
+         style="background: linear-gradient(135deg, #A04830, #823A26); border: 2px solid #A04830;">
         <span class="btn-text" style="color: white;">Prenota</span>
         <span class="btn-hover"
-              style="background: linear-gradient(180deg, #F5F0E8 0%, #ebe5d8 100%) !important; color: #8B3A2A !important; border-radius: 50px; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">Prenota</span>
+              style="background: linear-gradient(180deg, #F5F0E8 0%, #ebe5d8 100%) !important; color: #A04830 !important; border-radius: 50px; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">Prenota</span>
       </a>
     </div>
   </nav>
@@ -204,16 +204,16 @@
     <!-- Tab Navigation -->
     <div class="sticky top-[72px] z-40 bg-surface/80 backdrop-blur-xl border-b border-on-surface/5">
       <div class="container mx-auto px-6 flex overflow-x-auto gap-0 no-scrollbar tab-bar">
-        <button onclick="switchTab('antipasti')" class="tab-btn active flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-all whitespace-nowrap" data-tab="antipasti">
+        <button onclick="switchTab('antipasti')" class="tab-btn active flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#A04830] transition-all whitespace-nowrap" data-tab="antipasti">
           <span class="material-symbols-outlined text-base align-middle mr-1">restaurant_menu</span> Antipasti
         </button>
-        <button onclick="switchTab('primi-secondi')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-all whitespace-nowrap" data-tab="primi-secondi">
+        <button onclick="switchTab('primi-secondi')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#A04830] transition-all whitespace-nowrap" data-tab="primi-secondi">
           <span class="material-symbols-outlined text-base align-middle mr-1">restaurant</span> Primi &amp; Secondi
         </button>
-        <button onclick="switchTab('pizze')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-all whitespace-nowrap" data-tab="pizze">
+        <button onclick="switchTab('pizze')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#A04830] transition-all whitespace-nowrap" data-tab="pizze">
           <span class="material-symbols-outlined text-base align-middle mr-1">local_pizza</span> Pizze &amp; Calzoni
         </button>
-        <button onclick="switchTab('bevande')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-all whitespace-nowrap" data-tab="bevande">
+        <button onclick="switchTab('bevande')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#A04830] transition-all whitespace-nowrap" data-tab="bevande">
           <span class="material-symbols-outlined text-base align-middle mr-1">wine_bar</span> Dolci &amp; Bevande
         </button>
       </div>
@@ -542,24 +542,24 @@
   <footer class="bg-[#F5F0E8] rounded-t-[3rem] mt-20 w-full px-12 py-16 border-t border-on-surface/5">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
       <div class="flex flex-col items-center md:items-start gap-1">
-        <a href="index.html" class="no-underline"><div class="font-['Newsreader'] italic text-2xl font-bold text-[#8B3A2A]">La Bella 'Mbriana</div></a>
+        <a href="index.html" class="no-underline"><div class="font-['Newsreader'] italic text-2xl font-bold text-[#A04830]">La Bella 'Mbriana</div></a>
         <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/40">Trattoria Napoletana</div>
         <div class="flex gap-4 mt-3">
-          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors" href="https://wa.me/393665467484" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#A04830] transition-colors" href="https://wa.me/393665467484" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
         </div>
       </div>
       <div class="flex flex-col items-center gap-2">
         <div class="flex gap-6 text-sm">
-          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors font-['Manrope'] tracking-wide" href="index.html#story">La Storia</a>
-          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors font-['Manrope'] tracking-wide" href="menu.html">Menu</a>
-          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors font-['Manrope'] tracking-wide" href="index.html#gallery">Gallery</a>
-          <a class="text-[#1c1b1b]/40 hover:text-[#8B3A2A] transition-colors font-['Manrope'] tracking-wide" href="index.html#reservations">Contatti</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#A04830] transition-colors font-['Manrope'] tracking-wide" href="index.html#story">La Storia</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#A04830] transition-colors font-['Manrope'] tracking-wide" href="menu.html">Menu</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#A04830] transition-colors font-['Manrope'] tracking-wide" href="index.html#gallery">Gallery</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#A04830] transition-colors font-['Manrope'] tracking-wide" href="index.html#reservations">Contatti</a>
         </div>
         <div class="text-[#1c1b1b]/40 font-['Manrope'] text-sm tracking-wide text-center mt-2">© 2025 La Bella 'Mbriana. Tutti i diritti riservati.</div>
       </div>
       <div class="flex flex-col items-center md:items-end gap-1 text-sm text-[#1c1b1b]/40">
         <span>Via Mazza 97</span><span>27054 Montebello della Battaglia (PV)</span>
-        <a class="hover:text-[#8B3A2A] transition-colors" href="https://wa.me/393665467484">+39 366 546 7484</a>
+        <a class="hover:text-[#A04830] transition-colors" href="https://wa.me/393665467484">+39 366 546 7484</a>
       </div>
     </div>
   </footer>
