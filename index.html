@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Bella 'Mbriana - Trattoria Napoletana</title>
+    <title>La Bella 'Mbriana - Trattoria & Pizzeria Napoletana</title>
+    <link rel="icon" type="image/png" href="LBM%20LOGHI/3.png" />
+    <link rel="apple-touch-icon" href="LBM%20LOGHI/3.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&display=swap"
@@ -61,6 +63,43 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        @keyframes kenBurns {
+            0%   { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.08) translate(-1%, -1%); }
+        }
+
+        .hero-image-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('1.png');
+            background-size: cover;
+            background-position: center;
+            animation: kenBurns 22s ease-out infinite alternate;
+            z-index: -2;
+        }
+
+        .hero-logo {
+            width: clamp(220px, 32vw, 360px);
+            height: auto;
+            margin-bottom: 24px;
+            filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.45));
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .footer-logo {
+            height: 64px;
+            width: auto;
+            margin: 0 auto 20px;
+            display: block;
+            opacity: 0.95;
+        }
+
+        .nav-logo-img {
+            height: 30px;
+            width: auto;
+            display: block;
         }
 
         /* NAVBAR - CLEAN DESIGN */
@@ -171,7 +210,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.15) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.55) 100%);
             z-index: -1;
         }
 
@@ -541,7 +580,7 @@
         </div>
 
         <a href="#" class="nav-logo">
-            <span class="material-symbols-outlined">restaurant</span>
+            <img src="LBM%20LOGHI/3.png" alt="" class="nav-logo-img" />
             <span class="nav-logo-text">La Bella 'Mbriana</span>
         </a>
 
@@ -558,30 +597,10 @@
 
     <!-- HERO -->
     <header class="hero">
-        <video id="hero-bg-video" class="hero-video" autoplay loop muted playsinline>
-            <source src="https://dn711009.ca.archive.org/0/items/la_vera_pizza_napoletana/la_vera_pizza_napoletana.mp4"
-                type="video/mp4">
-        </video>
+        <div class="hero-image-bg"></div>
         <div class="hero-overlay"></div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var v = document.getElementById('hero-bg-video');
-                if (v) {
-                    v.muted = true;
-                    var playPromise = v.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(function (error) {
-                            console.log("Autoplay blocked. Add user interaction listener.");
-                            document.body.addEventListener('click', function () { v.play(); }, { once: true });
-                            document.body.addEventListener('touchstart', function () { v.play(); }, { once: true });
-                        });
-                    }
-                }
-            });
-        </script>
-        <span class="hero-subtitle">Benvenuti a Napoli</span>
-        <h1 class="hero-title">La Bella 'Mbriana</h1>
-        <p class="hero-text">Trattoria Napoletana. Dove lo spirito della casa incontra l'anima della cucina.</p>
+        <img src="LBM%20LOGHI/1.png" alt="La Bella 'Mbriana — Trattoria & Pizzeria Napoletana" class="hero-logo" />
+        <p class="hero-text">Dove lo spirito della casa incontra l'anima della cucina napoletana.</p>
         <div class="hero-btns">
             <a href="#reservations" class="btn-animated btn-reserve"
                 style="background: linear-gradient(135deg, #A04830, #823A26); border: 2px solid #A04830;">
@@ -624,7 +643,7 @@
                 <div
                     style="position: absolute; inset: -15px; border: 2px solid rgba(160,72,48,0.25); border-radius: 12px; transform: rotate(2deg);">
                 </div>
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600" alt="Chef preparing pasta"
+                <img src="_DSC0387.jpg" alt="Pizzaiolo al lavoro"
                     style="width: 100%; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.2);" />
             </div>
         </div>
@@ -645,43 +664,43 @@
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
                 <div
                     style="background: rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600" alt="Pizza"
-                        style="width: 100%; height: 200px; object-fit: cover;" />
+                    <img src="_DSC0386.jpg" alt="Pizza Margherita"
+                        style="width: 100%; height: 220px; object-fit: cover;" />
                     <div style="padding: 24px;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
-                            <h3 style="font-size: 1.2rem; font-weight: 700;">Pizza Margherita</h3>
-                            <span style="font-weight: 600;">€12</span>
+                            <h3 style="font-size: 1.2rem; font-weight: 700;">Margherita</h3>
+                            <span style="font-weight: 600;">€8</span>
                         </div>
-                        <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">Pomodoro San Marzano, mozzarella
-                            di bufala, basilico fresco.</p>
+                        <p style="font-size: 0.9rem; opacity: 0.75; line-height: 1.6;">Pomodoro San Marzano, fior di
+                            latte, grana, olio evo.</p>
                     </div>
                 </div>
 
                 <div
                     style="background: rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600" alt="Spaghetti"
-                        style="width: 100%; height: 200px; object-fit: cover;" />
+                    <img src="2.png" alt="Gamberi Pastellati"
+                        style="width: 100%; height: 220px; object-fit: cover;" />
                     <div style="padding: 24px;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
-                            <h3 style="font-size: 1.2rem; font-weight: 700;">Spaghetti Vongole</h3>
-                            <span style="font-weight: 600;">€18</span>
+                            <h3 style="font-size: 1.2rem; font-weight: 700;">Gamberi Pastellati</h3>
+                            <span style="font-weight: 600;">€10</span>
                         </div>
-                        <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">Vongole fresche, aglio,
-                            prezzemolo, nota di peperoncino.</p>
+                        <p style="font-size: 0.9rem; opacity: 0.75; line-height: 1.6;">Gamberi pastellati con crema
+                            di bufala e pistacchi.</p>
                     </div>
                 </div>
 
                 <div
                     style="background: rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-                    <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600" alt="Meatballs"
-                        style="width: 100%; height: 200px; object-fit: cover;" />
+                    <img src="_DSC0487.jpg" alt="Pizza Casa Varlese"
+                        style="width: 100%; height: 220px; object-fit: cover;" />
                     <div style="padding: 24px;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
-                            <h3 style="font-size: 1.2rem; font-weight: 700;">Polpette della Nonna</h3>
-                            <span style="font-weight: 600;">€14</span>
+                            <h3 style="font-size: 1.2rem; font-weight: 700;">Casa Varlese</h3>
+                            <span style="font-weight: 600;">€15</span>
                         </div>
-                        <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">Polpette tradizionali nel sugo
-                            della domenica.</p>
+                        <p style="font-size: 0.9rem; opacity: 0.75; line-height: 1.6;">Cornicione ripieno di ricotta,
+                            pancetta di maialino nero casertano, parmigiano reggiano.</p>
                     </div>
                 </div>
             </div>
@@ -700,20 +719,20 @@
             </div>
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; grid-auto-rows: 200px;">
                 <div style="grid-column: span 2; grid-row: span 2; border-radius: 12px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
-                        style="width: 100%; height: 100%; object-fit: cover;" alt="Restaurant interior" />
+                    <img src="_DSC0383.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;" alt="Pizza nel forno a legna" />
                 </div>
                 <div style="border-radius: 12px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400"
-                        style="width: 100%; height: 100%; object-fit: cover;" alt="Wine" />
+                    <img src="3.png"
+                        style="width: 100%; height: 100%; object-fit: cover;" alt="Cotoletta su piatto blu" />
                 </div>
                 <div style="border-radius: 12px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400"
-                        style="width: 100%; height: 100%; object-fit: cover;" alt="Pasta" />
+                    <img src="_DSC0384.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;" alt="Due pizze nel forno a legna" />
                 </div>
                 <div style="grid-column: span 2; border-radius: 12px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?w=800"
-                        style="width: 100%; height: 100%; object-fit: cover;" alt="Pizza oven" />
+                    <img src="1.png"
+                        style="width: 100%; height: 100%; object-fit: cover;" alt="Pizza davanti al forno a legna" />
                 </div>
             </div>
         </div>
@@ -823,6 +842,7 @@
 
     <!-- FOOTER -->
     <footer style="background: var(--bg-dark); color: var(--secondary); padding: 60px 24px; text-align: center;">
+        <img src="LBM%20LOGHI/2.png" alt="La Bella 'Mbriana — Trattoria & Pizzeria Napoletana" class="footer-logo" />
         <p style="margin-bottom: 16px;">© 2025 La Bella 'Mbriana Trattoria</p>
         <p style="font-size: 0.9rem; opacity: 0.7;">Via Mazza 97, 27054 Montebello della Battaglia (PV), Italy</p>
     </footer>
