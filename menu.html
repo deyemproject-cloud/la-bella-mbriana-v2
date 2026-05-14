@@ -65,17 +65,21 @@
     .tab-bar { -ms-overflow-style: none; scrollbar-width: none; }
     .allergens { font-family: 'Manrope', sans-serif; font-size: 0.7rem; letter-spacing: 0.05em; color: rgba(28,27,27,0.35); }
 
-    /* Sage-tinted menu cards with cream border, hover lift */
+    /* Menu "cards" — no background, dark-green text, subtle divider */
     .bg-surface-container-low {
-      border: 1px solid rgba(126, 136, 98, 0.18);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.35s ease;
+      background-color: transparent !important;
+      border: none !important;
+      border-bottom: 1px solid rgba(74, 93, 78, 0.15) !important;
+      border-radius: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      color: #3d5142;
+      transition: border-color 0.35s ease;
     }
+    .bg-surface-container-low h3 { color: #3d5142; }
+    .bg-surface-container-low p { color: rgba(61, 81, 66, 0.75) !important; }
     .bg-surface-container-low:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(126, 136, 98, 0.18);
-      border-color: rgba(160, 72, 48, 0.35);
+      border-bottom-color: rgba(160, 72, 48, 0.45) !important;
     }
     /* Section divider line — alternate sage on every other section heading for rhythm */
     [data-animate="fade-up"] + .w-16.h-1.bg-primary {
