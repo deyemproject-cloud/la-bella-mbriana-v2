@@ -13,6 +13,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
     <style>
         * {
             margin: 0;
@@ -803,14 +804,20 @@
                     Per gruppi più grandi di 8 persone, chiamaci direttamente.</p>
             </form>
 
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/it.js"></script>
             <script>
-                document.getElementById('res-date').addEventListener('change', function () {
-                    const d = new Date(this.value + 'T12:00:00');
-                    const day = d.getDay();
-                    if (day === 2 || day === 3) {
-                        alert('Siamo chiusi il martedì e il mercoledì. Per favore scegli un altro giorno.');
-                        this.value = '';
-                    }
+                // Calendar: gray out and disable Tuesday (2) and Wednesday (3) — giorni di chiusura
+                flatpickr('#res-date', {
+                    locale: 'it',
+                    minDate: 'today',
+                    dateFormat: 'Y-m-d',
+                    disableMobile: true,
+                    disable: [
+                        function (date) {
+                            return date.getDay() === 2 || date.getDay() === 3;
+                        }
+                    ]
                 });
 
                 document.getElementById('reservation-form').addEventListener('submit', function (e) {
