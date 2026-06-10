@@ -804,6 +804,15 @@
             </form>
 
             <script>
+                document.getElementById('res-date').addEventListener('change', function () {
+                    const d = new Date(this.value + 'T12:00:00');
+                    const day = d.getDay();
+                    if (day === 2 || day === 3) {
+                        alert('Siamo chiusi il martedì e il mercoledì. Per favore scegli un altro giorno.');
+                        this.value = '';
+                    }
+                });
+
                 document.getElementById('reservation-form').addEventListener('submit', function (e) {
                     e.preventDefault();
 
@@ -814,6 +823,14 @@
 
                     if (!date || !time || !name) {
                         alert('Per favore compila tutti i campi obbligatori.');
+                        return;
+                    }
+
+                    // Block Tuesday (2) and Wednesday (3)
+                    const selectedDate = new Date(date + 'T12:00:00');
+                    const dayOfWeek = selectedDate.getDay();
+                    if (dayOfWeek === 2 || dayOfWeek === 3) {
+                        alert('Siamo chiusi il martedì e il mercoledì. Per favore scegli un altro giorno.');
                         return;
                     }
 
